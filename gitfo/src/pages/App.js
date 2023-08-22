@@ -1,9 +1,9 @@
-import App1 from "./pages/App.js";
+import Search from "./search/index";
 
 function App() {
   return (
     <div>
-      <App1 />
+      <Search />
     </div>
   );
 }
