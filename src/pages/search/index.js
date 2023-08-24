@@ -37,10 +37,12 @@ function Search() {
       </div>
       <div>
         {userData.map((user, index) => (
-          <div key={index}>
-            <img src={user.profile_img} alt={user.name} />
-            <p>{user.name}</p>
-            <p>{user.bio}</p>
+          <div id="searchResult"key={index}>
+            <img id="profile" src={user.profile_img} alt={user.name} />
+            <div id="info">
+              <p id="name">{user.name}</p>
+              <p id="bio">{user.bio}</p>
+            </div>
           </div>
         ))}
       </div>

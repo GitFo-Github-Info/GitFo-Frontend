@@ -16,3 +16,31 @@
   top: 21.5%;
   right: 21.5%;
 }
+
+#searchResult {
+  width: 800px;
+  height: 150px;
+  flex-shrink: 0;
+  display: flex;
+
+  border-radius: 30px;
+  background: #fefefe;
+  box-shadow: 0px 2px 8px 0px rgba(152, 152, 152, 0.25);
+}
+#profile {
+    display: flex;
+    width: 20%;
+    height:100%;
+}
+
+#info {
+    display: flex;
+}
+
+#name {
+    display: flex;
+}
+
+#bio {
+    display: flex;
+}
