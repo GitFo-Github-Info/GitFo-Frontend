@@ -36,18 +36,22 @@ function Search() {
         />
       </div>
       <div>
-        {userData.map((user, index) => {
-          const { total, ...rest } = user; 
-          return total === undefined ? (
-            <div id="searchResult" key={index}>
-              <img id="profile" src={rest.profile_img} alt={rest.name} />
-              <div id="info">
-                <p id="name">{rest.name}</p>
-                <p id="bio">{rest.bio}</p>
+        {userData.length === 0 ? (
+          <p id="noSearch">No search results found</p>
+        ) : (
+          userData.map((user, index) => {
+            const { total, ...rest } = user; 
+            return total === undefined ? (
+              <div id="searchResult" key={index}>
+                <img id="profile" src={rest.profile_img} alt={rest.name} />
+                <div id="info">
+                  <p id="name">{rest.name}</p>
+                  <p id="bio">{rest.bio}</p>
+                </div>
               </div>
-            </div>
-          ) : null;
-        })}
+            ) : null;
+          })
+        )}
       </div>
     </div>
   );

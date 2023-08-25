@@ -28,29 +28,42 @@
   background: #fefefe;
   box-shadow: 0px 2px 8px 0px rgba(152, 152, 152, 0.25);
 }
+#noSearch {
+  display: flex;
+  width: 532px;
+  height: 45px;
+  margin: 15% 0 0 40%;
+  flex-shrink: 0;
+  color: #9a9a9a;
+  font-family: Inter;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
 #profile {
-    display: flex;
-    width: 12%;
-    height:80%;
-    border-radius: 100%;
-    margin: 2% 0 0 2%;
+  display: flex;
+  width: 12%;
+  height: 80%;
+  border-radius: 100%;
+  margin: 2% 0 0 2%;
 }
 
 #info {
-    display: flex;
-    flex-direction: column;
-    margin: 1% 0 0 2%;
+  display: flex;
+  flex-direction: column;
+  margin: 1% 0 0 2%;
 }
 
 #name {
-    display: flex;
-    font-size: 20px;
-    width: 100%;
-    
+  display: flex;
+  font-size: 20px;
+  width: 100%;
 }
 
 #bio {
-    display: flex;
-    width: 100%;
-    margin-top: 0;
+  display: flex;
+  width: 100%;
+  margin-top: 0;
 }
