@@ -6,6 +6,7 @@ import axios from "axios";
 function Search() {
   const [searchInput, setSearchInput] = useState("");
   const [userData, setUserData] = useState([]);
+  const [error, setError] = useState("");
 
   const handleSearch = async () => {
     try {
@@ -13,10 +14,12 @@ function Search() {
         `https://gitfoback.anys.kro.kr/search/users/${searchInput}?page=1`,
       );
       setUserData(response.data);
+      setError(""); // Clear any previous error
       console.log(response.data);
     } catch (error) {
       console.error("Error:", error);
       setUserData([]);
+      setError("정보를 불러올 수 없습니다.");
     }
   };
 
@@ -37,6 +40,7 @@ function Search() {
         />
       </div>
       <div>
+        {error && <h2 id="error">{error}</h2>}
         {userData.map((user, index) => {
           const { total, ...rest } = user;
           return total === undefined ? (
