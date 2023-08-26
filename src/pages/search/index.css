@@ -1,3 +1,8 @@
+#search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 #searchInput {
   width: 800px;
   height: 45px;
@@ -6,9 +11,9 @@
   background: #f4f4f4;
   border: none;
   display: flex;
-  margin: 3% auto 3% auto;
+  margin: 3% 0 3% 0;
   font-size: 20px;
-  padding-left: 25px;
+  padding-left: 1.5%;
 }
 
 #SearchTap {
@@ -23,11 +28,11 @@
   height: 150px;
   flex-shrink: 0;
   display: flex;
-  margin: 2% 0 0 17%;
   border-radius: 30px;
   background: #fefefe;
   box-shadow: 0px 2px 8px 0px rgba(152, 152, 152, 0.25);
 }
+
 #noSearch {
   display: flex;
   width: 532px;
@@ -47,19 +52,25 @@
   width: 12%;
   height: 80%;
   border-radius: 100%;
-  margin: 2% 0 0 2%;
+  margin-right: auto;
 }
 
 #info {
   display: flex;
   flex-direction: column;
-  margin: 1% 0 0 2%;
 }
-
+#personal {
+  display: flex;
+}
 #name {
   display: flex;
   font-size: 20px;
   width: 100%;
+}
+
+#id {
+  display: flex;
+  margin: 13% 0 0 2%;
 }
 
 #bio {

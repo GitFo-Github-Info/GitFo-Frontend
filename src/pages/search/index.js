@@ -26,6 +26,7 @@ function Search() {
         <input
           id="searchInput"
           value={searchInput}
+          placeholder="Search users name"
           onChange={(e) => setSearchInput(e.target.value)}
         />
         <img
@@ -36,22 +37,26 @@ function Search() {
         />
       </div>
       <div>
-        {userData.length === 0 ? (
-          <p id="noSearch">No search results found</p>
-        ) : (
-          userData.map((user, index) => {
-            const { total, ...rest } = user; 
-            return total === undefined ? (
-              <div id="searchResult" key={index}>
-                <img id="profile" src={rest.profile_img} alt={rest.name} />
-                <div id="info">
+        {userData.map((user, index) => {
+          const { total, ...rest } = user;
+          return total === undefined ? (
+            <div id="searchResult" key={index}>
+              <img id="profile" src={rest.profile_img} alt={rest.name} />
+              <div id="info">
+                <div id="personal">
                   <p id="name">{rest.name}</p>
-                  <p id="bio">{rest.bio}</p>
+                  <p id="id">{rest.id}</p>
                 </div>
+                <p id="bio">{rest.bio}</p>
+                <p id="repo">{rest.public_repos}</p>
               </div>
-            ) : null;
-          })
-        )}
+              <div id="detail">
+                <p id="follower">{rest.followers}</p>
+                <p id="follow">{rest.follow}</p>
+              </div>
+            </div>
+          ) : null;
+        })}
       </div>
     </div>
   );
