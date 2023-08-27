@@ -57,11 +57,15 @@ function Search() {
                     <p id="repo">Repos : {rest.public_repos}</p>
                   </div>
                 </div>
-                <div id="detail">
-                  <p id="follower">{rest.followers} followers</p>
-                  <p id="follow">{rest.following} following</p>
-                  <p id="location">{rest.location}</p>
-                  <p id="company">{rest.company}</p>
+                <div id="detailBox">
+                  <div id="follow">
+                    <p id="follower">{rest.followers} followers</p>
+                    <p id="follow">{rest.following} following</p>
+                  </div>
+                  <div id="detail">
+                    <p id="company">{rest.company}</p>
+                    <p id="location">{rest.location}</p>
+                  </div>
                 </div>
               </div>
             </div>
