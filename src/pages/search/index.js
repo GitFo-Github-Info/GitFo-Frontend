@@ -14,7 +14,7 @@ function Search() {
         `https://gitfoback.anys.kro.kr/search/users/${searchInput}?page=1`,
       );
       setUserData(response.data);
-      setError(""); // Clear any previous error
+      setError("");
       console.log(response.data);
     } catch (error) {
       console.error("Error:", error);
@@ -39,13 +39,14 @@ function Search() {
           onClick={handleSearch}
         />
       </div>
-      <div>
+      <div id="searchResult">
         {error && <h2 id="error">{error}</h2>}
         {userData.map((user, index) => {
           const { total, ...rest } = user;
           return total === undefined ? (
-            <div id="searchResult" key={index}>
+            <div id="searchResultBox" key={index}>
               <img id="profile" src={rest.profile_img} alt={rest.name} />
+              <div id="infoBox">
               <div id="info">
                 <div id="personal">
                   <p id="name">{rest.name}</p>
@@ -57,6 +58,7 @@ function Search() {
               <div id="detail">
                 <p id="follower">{rest.followers}</p>
                 <p id="follow">{rest.follow}</p>
+              </div>
               </div>
             </div>
           ) : null;
