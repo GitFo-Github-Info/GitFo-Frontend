@@ -47,18 +47,22 @@ function Search() {
             <div id="searchResultBox" key={index}>
               <img id="profile" src={rest.profile_img} alt={rest.name} />
               <div id="infoBox">
-              <div id="info">
-                <div id="personal">
-                  <p id="name">{rest.name}</p>
-                  <p id="id">{rest.id}</p>
+                <div id="info">
+                  <div id="personal">
+                    <p id="name">{rest.name !== null ? rest.name : rest.id}</p>
+                    <p id="id">{rest.id}</p>
+                  </div>
+                  <div id="bioBox">
+                    <p id="bio">{rest.bio}</p>
+                    <p id="repo">Repos : {rest.public_repos}</p>
+                  </div>
                 </div>
-                <p id="bio">{rest.bio}</p>
-                <p id="repo">{rest.public_repos}</p>
-              </div>
-              <div id="detail">
-                <p id="follower">{rest.followers}</p>
-                <p id="follow">{rest.follow}</p>
-              </div>
+                <div id="detail">
+                  <p id="follower">{rest.followers} followers</p>
+                  <p id="follow">{rest.following} following</p>
+                  <p id="location">{rest.location}</p>
+                  <p id="company">{rest.company}</p>
+                </div>
               </div>
             </div>
           ) : null;
