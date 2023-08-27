@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "./index.css";
 import SearchTap from "../../assets/search.png";
+import Company from "../../assets/company.svg";
+import Location from "../../assets/location.svg";
 import axios from "axios";
 
 function Search() {
@@ -24,7 +26,7 @@ function Search() {
   };
 
   return (
-    <div>
+    <div id="container">
       <div id="search">
         <input
           id="searchInput"
@@ -54,17 +56,25 @@ function Search() {
                   </div>
                   <div id="bioBox">
                     <p id="bio">{rest.bio}</p>
-                    <p id="repo">Repos : {rest.public_repos}</p>
+                    <p id="repo">
+                      Repos : {rest.public_repos}
+                    </p>
                   </div>
                 </div>
                 <div id="detailBox">
                   <div id="follow">
-                    <p id="follower">{rest.followers} followers</p>
-                    <p id="follow">{rest.following} following</p>
+                    <p id="follower">{rest.followers}followers</p>
+                    <p id="followings">{rest.following}following</p>
                   </div>
                   <div id="detail">
-                    <p id="company">{rest.company}</p>
-                    <p id="location">{rest.location}</p>
+                    <p id="company">
+                      <img id="companyImg"src={Company} alt="company" />
+                      {rest.company}
+                    </p>
+                    <p id="location">
+                      <img id="locationImg" src={Location} alt="location" />
+                      {rest.location}
+                    </p>
                   </div>
                 </div>
               </div>

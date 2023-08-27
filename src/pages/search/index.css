@@ -3,10 +3,9 @@
   justify-content: center;
   align-items: center;
 }
-#container {
+#container{
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 #searchInput {
@@ -24,15 +23,12 @@
 
 #SearchTap {
   position: absolute;
-  width: 1.8%;
-  top: 16%;
+  width: 2%;
+  top: 13%;
   right: 24.5%;
 }
 
 #searchResult {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
 }
 #searchResultBox {
@@ -57,86 +53,148 @@
   color: #9a9a9a;
   font-family: Inter;
   font-size: 30px;
-  font-style: normal;
   font-weight: 400;
   line-height: normal;
+  flex-shrink: 0;
+
 }
 
 #profile {
   display: flex;
   width: 12%;
   height: 80%;
-  margin-left: 2%;
+  margin: 0 0 0 2%;
   border-radius: 100%;
+  flex-shrink: 0;
 }
 #infoBox {
   display: flex;
-  padding: 2%;
+  padding-left: 2%;
+  flex-shrink: 0;
+  justify-content: space-between;
+  width: 78%;
+  margin: 0 0 0 0;
 }
 #info {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  flex-shrink: 0;
+  margin: 0 0 0 0;
+
 }
 #personal {
   display: flex;
-  justify-content: center;
   flex-shrink: 0;
+  width: 200%;
 }
 #name {
   display: flex;
-  font-size: 25px;
-  width: 150%;
+  font-size: 22px;
   font-weight: 400;
+  margin: 0 5% 0 0;
+  font-family: Noto Sans;
+  flex-shrink: 0;
 }
 
 #id {
   display: flex;
   color: #5b5b5b;
   font-size: 18px;
+  margin: 1% 0 0 0;
+  font-family: Noto Sans;
+  flex-shrink: 0;
+  letter-spacing: 1px;
 }
 #bioBox {
   display: flex;
   flex-direction: row;
-  width: 100%;
+  width: 200%;
+  margin: 1% 0 0 0;
+  flex-shrink: 0;
+
 }
 #bio {
   display: flex;
   color: #5b5b5b;
+  margin: 0 5% 0 0;
+  font-family: Noto Sans;
+  flex-shrink: 0;
 }
-
+#null-bio{
+  display:flex;
+  margin: 0 0 0 50%;
+  font-family: Noto Sans;
+  flex-shrink: 0;
+  letter-spacing: 1px;
+}
 #repo {
   display: flex;
   color: #5b5b5b;
+  margin: 0 0 0 0;
+  font-family: Noto Sans;
+  flex-shrink: 0;
+  letter-spacing: 1px;
 }
 
 #follower {
   display: flex;
   color: #5b5b5b;
+  margin: 0 4% 0 0;
+  font-family: Noto Sans;
+  letter-spacing: 1px;
+
+}
+
+#followings {
+  display: flex;
+  color: #5b5b5b;
+  margin: 0;
+  font-family: Noto Sans;
+  letter-spacing: 1px;
 }
 #detailBox{
   display: flex;
   flex-direction: column;
+  flex-shrink: 0;
 }
 #follow {
   display: flex;
   color: #5b5b5b;
+  margin: 0 0 2% 0;
+  width: 200%;
+  font-family: Noto Sans;
 }
 #detail {
   display: flex;
   width: 100%;
+  margin: 0;
+  width: 200%
 }
 #location {
   display: flex;
   color: #5b5b5b;
+  margin: 0;
+  font-family: Noto Sans;
+  letter-spacing: 1px;
 }
 #company {
   display: flex;
   color: #5b5b5b;
+  margin: 0 2% 0 0;
+  font-family: Noto Sans;
+  letter-spacing: 1px;
 }
 #error {
   display: flex;
   justify-content: center;
   align-items: center;
   font-weight: 700;
+}
+#companyImg{
+  display: flex;
+  margin-right: 2%;
+}
+#locationImg{
+  display: flex;
 }
