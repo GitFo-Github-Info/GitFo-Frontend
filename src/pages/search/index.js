@@ -4,10 +4,12 @@ import SearchTap from "../../assets/search.png";
 import Company from "../../assets/company.svg";
 import Location from "../../assets/location.svg";
 import axios from "axios";
+import UserPage from "../userPage/index.js";
 
 function Search() {
   const [searchInput, setSearchInput] = useState("");
   const [userData, setUserData] = useState([]);
+  const [selectedUser, setSelectedUser] = useState(null);
   const [error, setError] = useState("");
 
   const handleSearch = async () => {
@@ -23,6 +25,10 @@ function Search() {
       setUserData([]);
       setError("정보를 불러올 수 없습니다.");
     }
+  };
+
+  const handleUserClick = (user) => {
+    setSelectedUser(user);
   };
 
   return (
@@ -46,7 +52,11 @@ function Search() {
         {userData.map((user, index) => {
           const { total, ...rest } = user;
           return total === undefined ? (
-            <div id="searchResultBox" key={index}>
+            <div
+              id="searchResultBox"
+              key={index}
+              onClick={() => handleUserClick(user)}
+            >
               <img id="profile" src={rest.profile_img} alt={rest.name} />
               <div id="infoBox">
                 <div id="info">
@@ -56,9 +66,7 @@ function Search() {
                   </div>
                   <div id="bioBox">
                     <p id="bio">{rest.bio}</p>
-                    <p id="repo">
-                      Repos : {rest.public_repos}
-                    </p>
+                    <p id="repo">Repos : {rest.public_repos}</p>
                   </div>
                 </div>
                 <div id="detailBox">
@@ -68,7 +76,7 @@ function Search() {
                   </div>
                   <div id="detail">
                     <p id="company">
-                      <img id="companyImg"src={Company} alt="company" />
+                      <img id="companyImg" src={Company} alt="company" />
                       {rest.company}
                     </p>
                     <p id="location">
@@ -82,8 +90,8 @@ function Search() {
           ) : null;
         })}
       </div>
+      {selectedUser && <UserPage user={selectedUser} />}
     </div>
   );
 }
-
 export default Search;
