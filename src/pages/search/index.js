@@ -4,12 +4,10 @@ import SearchTap from "../../assets/search.png";
 import Company from "../../assets/company.svg";
 import Location from "../../assets/location.svg";
 import axios from "axios";
-import UserPage from "../userPage/index.js";
 
 function Search() {
   const [searchInput, setSearchInput] = useState("");
   const [userData, setUserData] = useState([]);
-  const [selectedUser, setSelectedUser] = useState(null);
   const [error, setError] = useState("");
 
   const handleSearch = async () => {
@@ -27,8 +25,10 @@ function Search() {
     }
   };
 
-  const handleUserClick = (user) => {
-    setSelectedUser(user);
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      handleSearch();
+    }
   };
 
   return (
@@ -39,6 +39,7 @@ function Search() {
           value={searchInput}
           placeholder="Search users name"
           onChange={(e) => setSearchInput(e.target.value)}
+          onKeyPress={handleKeyPress}
         />
         <img
           id="SearchTap"
@@ -52,11 +53,7 @@ function Search() {
         {userData.map((user, index) => {
           const { total, ...rest } = user;
           return total === undefined ? (
-            <div
-              id="searchResultBox"
-              key={index}
-              onClick={() => handleUserClick(user)}
-            >
+            <div id="searchResultBox" key={index}>
               <img id="profile" src={rest.profile_img} alt={rest.name} />
               <div id="infoBox">
                 <div id="info">
@@ -90,7 +87,6 @@ function Search() {
           ) : null;
         })}
       </div>
-      {selectedUser && <UserPage user={selectedUser} />}
     </div>
   );
 }
