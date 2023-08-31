@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom"; // Link 추가
+import { Link, useParams } from "react-router-dom";
 
-function UserPage({ user }) {
+function UserPage() {
+  const { userId } = useParams();
   const [userDetails, setUserDetails] = useState(null);
   const [error, setError] = useState("");
 
@@ -10,7 +11,7 @@ function UserPage({ user }) {
     const fetchUserDetails = async () => {
       try {
         const response = await axios.get(
-          `https://gitfoback.anys.kro.kr/search/${user.id}`,
+          `https://gitfoback.anys.kro.kr/search/${userId}`,
         );
         setUserDetails(response.data);
         setError("");
@@ -22,7 +23,7 @@ function UserPage({ user }) {
     };
 
     fetchUserDetails();
-  }, [user.id]);
+  }, [userId]);
 
   if (error) {
     return <div>{error}</div>;

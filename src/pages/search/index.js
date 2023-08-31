@@ -4,7 +4,7 @@ import SearchTap from "../../assets/search.png";
 import Company from "../../assets/company.svg";
 import Location from "../../assets/location.svg";
 import axios from "axios";
-import { Link } from "react-router-dom"; // Link 컴포넌트를 임포트
+import { Link } from "react-router-dom";
 
 function Search() {
   const [searchInput, setSearchInput] = useState("");
@@ -54,11 +54,7 @@ function Search() {
         {userData.map((user, index) => {
           const { total, ...rest } = user;
           return total === undefined ? (
-            <Link
-              to={`/user/${user.id}`} // Link 컴포넌트를 사용하여 링크 생성
-              id="searchResultBox"
-              key={index}
-            >
+            <Link to={`/user/${user.id}`} id="searchResultBox" key={index}>
               <img id="profile" src={rest.profile_img} alt={rest.name} />
               <div id="infoBox">
                 <div id="info">
