@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom"; // Link 추가
 
 function UserPage({ user }) {
   const [userDetails, setUserDetails] = useState(null);
@@ -33,7 +34,14 @@ function UserPage({ user }) {
 
   return (
     <div>
-        {user.id}
+      <Link to="/">Back to Search</Link>
+      <h1>{userDetails.name || userDetails.id}</h1>
+      <p>{userDetails.bio}</p>
+      <p>Repos: {userDetails.public_repos}</p>
+      <p>Followers: {userDetails.followers}</p>
+      <p>Following: {userDetails.following}</p>
+      <p>Company: {userDetails.company}</p>
+      <p>Location: {userDetails.location}</p>
     </div>
   );
 }

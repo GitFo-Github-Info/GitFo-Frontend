@@ -4,12 +4,11 @@ import SearchTap from "../../assets/search.png";
 import Company from "../../assets/company.svg";
 import Location from "../../assets/location.svg";
 import axios from "axios";
-import UserPage from "../userPage/index.js";
+import { Link } from "react-router-dom"; // Link 컴포넌트를 임포트
 
 function Search() {
   const [searchInput, setSearchInput] = useState("");
   const [userData, setUserData] = useState([]);
-  const [selectedUser, setSelectedUser] = useState(null);
   const [error, setError] = useState("");
 
   const handleSearch = async () => {
@@ -31,10 +30,6 @@ function Search() {
     if (e.key === "Enter") {
       handleSearch();
     }
-  };
-
-  const handleUserClick = (user) => {
-    setSelectedUser(user);
   };
 
   return (
@@ -59,10 +54,10 @@ function Search() {
         {userData.map((user, index) => {
           const { total, ...rest } = user;
           return total === undefined ? (
-            <div
+            <Link
+              to={`/user/${user.id}`} // Link 컴포넌트를 사용하여 링크 생성
               id="searchResultBox"
               key={index}
-              onClick={() => handleUserClick(user)}
             >
               <img id="profile" src={rest.profile_img} alt={rest.name} />
               <div id="infoBox">
@@ -93,11 +88,10 @@ function Search() {
                   </div>
                 </div>
               </div>
-            </div>
+            </Link>
           ) : null;
         })}
       </div>
-      {selectedUser && <UserPage user={selectedUser} />}
     </div>
   );
 }

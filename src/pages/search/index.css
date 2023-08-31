@@ -3,7 +3,7 @@
   justify-content: center;
   align-items: center;
 }
-#container{
+#container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -56,7 +56,6 @@
   font-weight: 400;
   line-height: normal;
   flex-shrink: 0;
-
 }
 
 #profile {
@@ -81,7 +80,6 @@
   justify-content: center;
   flex-shrink: 0;
   margin: 0;
-
 }
 #personal {
   display: flex;
@@ -111,18 +109,16 @@
   flex-direction: row;
   width: 200%;
   margin: 1% 0 0 0;
-  flex-shrink: 0;
-
 }
 #bio {
   display: flex;
   color: #5b5b5b;
   margin: 0 5% 0 0;
   font-family: Noto Sans;
-  flex-shrink: 0;
 }
-#null-bio{
-  display:flex;
+
+#null-bio {
+  display: flex;
   margin: 0 0 0 50%;
   font-family: Noto Sans;
   flex-shrink: 0;
@@ -143,17 +139,16 @@
   margin: 0 4% 0 0;
   font-family: Noto Sans;
   letter-spacing: 1px;
-
 }
 
 #followings {
   display: flex;
   color: #5b5b5b;
-  margin: 0;
+  margin: 0;  
   font-family: Noto Sans;
   letter-spacing: 1px;
 }
-#detailBox{
+#detailBox {
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
@@ -169,7 +164,7 @@
   display: flex;
   width: 100%;
   margin: 0;
-  width: 200%
+  width: 200%;
 }
 #location {
   display: flex;
@@ -191,10 +186,10 @@
   align-items: center;
   font-weight: 700;
 }
-#companyImg{
+#companyImg {
   display: flex;
   margin-right: 2%;
 }
-#locationImg{
+#locationImg {
   display: flex;
 }
