@@ -41,6 +41,7 @@ function Search() {
           placeholder="Search users name"
           onChange={(e) => setSearchInput(e.target.value)}
           onKeyPress={handleKeyPress}
+          autoFocus
         />
         <img
           id="SearchTap"

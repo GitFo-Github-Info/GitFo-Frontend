@@ -60,10 +60,10 @@
 
 #profile {
   display: flex;
-  width: 12%;
-  height: 80%;
+  width: 11%;
+  height: 70%;
   margin: 0 0 0 2%;
-  border-radius: 100%;
+  border-radius: 20%;
   flex-shrink: 0;
 }
 #infoBox {
