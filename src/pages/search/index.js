@@ -53,7 +53,7 @@ function Search() {
       <div id="searchResult">
         {error && <h2 id="error">{error}</h2>}
         {searchInput !== "" && userData.length === 0 && !error && (
-          <p>Loading...</p>
+          <p id="loading">Loading...</p>
         )}
         {userData.map((user, index) => {
           const { total, ...rest } = user;

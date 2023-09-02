@@ -71,7 +71,7 @@
   padding-left: 2%;
   flex-shrink: 0;
   justify-content: space-between;
-  width: 78%;
+  width: 80%;
   margin: 0;
 }
 #info {
@@ -107,7 +107,7 @@
 #bioBox {
   display: flex;
   flex-direction: row;
-  width: 200%;
+  width: 150%;
   margin: 1% 0 0 0;
 }
 #bio {
@@ -191,10 +191,19 @@
   margin-right: 2%;
 }
 #locationImg {
+  width: 15%;
   display: flex;
 }
 
 a {
   text-decoration: none;
   color: inherit;
+}
+
+#loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  font-size: 20px;
 }
