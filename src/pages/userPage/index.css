@@ -1,3 +1,7 @@
 #userpage {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 65%;
+  margin-top: 2%;
 }
