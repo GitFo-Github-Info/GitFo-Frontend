@@ -80,6 +80,7 @@
   justify-content: center;
   flex-shrink: 0;
   margin: 0;
+  width: 60%;
 }
 #personal {
   display: flex;
